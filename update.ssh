@@ -1,0 +1,11 @@
+cd .. &&
+rm -rf dist &&
+yarn build &&
+cd dist || exit
+git init &&
+git add . &&
+git commit -m "部署" &&
+git branch -M main &&
+git remote add origin git@github.com:leigp555/wheel-UI.git &&
+git push -f -u origin main &&
+cd ..
